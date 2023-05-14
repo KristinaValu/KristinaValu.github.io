@@ -1,0 +1,166 @@
+@use "./../variables";
+
+h1 {
+  font-family: variables.$secondary-font-family;
+  text-align: center;
+  margin: 2em 0 0.7em 0;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.contact-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  margin-bottom: 3em;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    margin: 0 auto;
+    margin-bottom: 3em;
+    width: clamp(120px, 95%, 640px);
+
+    input,
+    textarea {
+      font-size: 1rem;
+      padding: 0.5em;
+      border-radius: 3px;
+      font-family: inherit;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+        rgb(209, 213, 219) 0px 0px 0px 1px inset;
+      transition: box-shadow 0.2s ease-in-out;
+
+      &:focus:valid {
+        box-shadow: rgba(5, 189, 66, 0.671) 0px 0px 0px 2px;
+      }
+
+      &::placeholder {
+        color: rgb(137, 136, 136);
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: variables.$accent-color 0px 0px 0px 1px;
+      }
+    }
+
+    input {
+      height: 2.5em;
+      padding-top: 0.2em;
+      padding-bottom: 0.2em;
+    }
+
+    textarea {
+      height: 130px;
+      min-height: 80px;
+      max-height: 220px;
+      resize: vertical;
+    }
+
+    button {
+      font-family: inherit;
+      font-size: 1rem;
+      color: variables.$main-color;
+      background-color: variables.$accent-color;
+      border: none;
+      border-radius: 3px;
+      padding: 0.5em 1.5em;
+      width: fit-content;
+      margin: 0.3em auto 0 auto;
+      cursor: pointer;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+
+    .error {
+      color: rgb(228, 2, 2);
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-top: -8px;
+    }
+
+    .success-message {
+      color: rgb(32, 127, 32);
+      font-weight: 500;
+      text-align: center;
+    }
+  }
+  .contacts {
+    max-width: 640px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    line-height: 2.3;
+
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.125rem;
+    }
+
+    .contact-info {
+      padding: 1em;
+
+      .wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0.6em;
+
+        .contact-icon {
+          width: 1.4em;
+        }
+      }
+    }
+
+    .social-networks {
+      padding: 1em;
+
+      .icons {
+        margin-top: 0.3em;
+        display: flex;
+        gap: 1.5em;
+
+        a {
+          text-decoration: none;
+          color: variables.$secondary-color;
+
+          .social-icon {
+            cursor: pointer;
+            transition: color 0.3s;
+
+            &:hover {
+              color: variables.$accent-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .contact-container {
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+
+    form {
+      padding: 2em;
+    }
+
+    .contacts {
+      flex-direction: column;
+      align-self: flex-start;
+    }
+  }
+}

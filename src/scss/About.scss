@@ -1,0 +1,101 @@
+@use "./../variables";
+ 
+.about-container {
+    overflow-x: hidden;
+    max-width: 600px;
+    margin: 2em auto 5.5em auto;
+  
+    .about-wrapper {
+      padding: 0 1.1em;
+  
+      h1 {
+        font-family: variables.$secondary-font-family;
+        text-align: center;
+        margin: 0 0 2rem 0;
+        font-size: 2.5rem;
+        font-weight: 500;
+      }
+  
+      p {
+        line-height: 1.5;
+      }
+    }
+  
+    .skills-wrapper {
+      padding: 0 0.8em;
+      margin-top: 3em;
+  
+      h1 {
+        font-family: variables.$secondary-font-family;
+        text-align: center;
+        margin: 0 0 2rem 0;
+        font-size: 2.5rem;
+        font-weight: 500;
+      }
+  
+      .all-skills {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+  
+        .col {
+          min-width: 137px;
+  
+          .skill {
+            margin-bottom: 1em;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+  
+            img {
+              height: 3em;
+              width: 3em;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .about-wrapper.hidden {
+    opacity: 0;
+    // filter: blur(5px);
+    transform: translateX(-100%);
+    transition: transform 1s ease;
+  }
+  
+  .about-wrapper.hidden.show {
+    opacity: 1;
+    // filter: blur(0);
+    transform: translateX(0);
+  }
+  
+  .skills-wrapper.hidden {
+    opacity: 0;
+    // filter: blur(5px);
+    transform: translateX(100%);
+    transition: transform 1s ease;
+  }
+  
+  .skills-wrapper.show {
+    opacity: 1;
+    // filter: blur(0);
+    transform: translateX(0);
+  }
+  
+  @media screen and (min-width: 950px) {
+    .about-container {
+      max-width: 1200px;
+      display: flex;
+  
+      .about-wrapper {
+        flex: 1;
+        padding: 0 4em;
+      }
+  
+      .skills-wrapper {
+        margin-top: 0;
+        flex: 1;
+      }
+    }
+  }

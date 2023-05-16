@@ -27,9 +27,19 @@ function About() {
           situation, and approach challenges or awkward situations in an
           optimistic and productive way.
         </p>
+        <p>
+        I am a career changer. From economics to programming...I'm on the go, learning new interesting things every day.
+        </p>
+        
+        <p>
+          Positive mindset enthusiast – I tend to focus on the good in any given
+          situation, and approach challenges or awkward situations in an
+          optimistic and productive way.
+        </p>
        
       </div>
-      <div className="hidden skills-wrapper">
+     
+      <div className="skills-wrapper">
         <h1>SKILLS</h1>
         <div className="all-skills">
           <div className="col">

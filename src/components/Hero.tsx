@@ -9,7 +9,7 @@ function Hero() {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["I'm student....Now I'm learning React, TypeScript..."],
+      strings: ["Hello, my name is Kristina. I am currently learning front-end programming. I am deepening my knowledge in Javascript, React, TypeScript..."],
       typeSpeed: 50,
     });
     return () => {
